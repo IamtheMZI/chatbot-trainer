@@ -1,7 +1,7 @@
-version: "3.9"
+version: "3.3"
 services:
 # PRODUCTION SERVICES
-  flask-nginx-server:
+  jupyter:
     build: docker/jupyter-0.0
     network_mode: host
     ports: 
@@ -9,5 +9,5 @@ services:
       - 80:80
     volumes:
       - ${HOME}:/home/jovyan/work
-    command: bash -c "jupyter notebook -port 3389"
+    command: bash -c "jupyter notebook --port 3389"
 

@@ -1,3 +1,3 @@
 FROM jupyter/datascience-notebook
-RUN apt update
-RUN python -m pip install -r requirements.txt
+COPY requirements.txt /tmp/requirements.txt
+RUN python -m pip install -r /tmp/requirements.txt
