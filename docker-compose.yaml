@@ -9,5 +9,16 @@ services:
       - 80:80
     volumes:
       - ${HOME}:/home/jovyan/work
+      - ${HOME}/.jupyter:/home/jovyan/.jupyter
     command: bash -c "jupyter notebook --port 3389"
+# Development Services
+  jupyter-dev:
+    build: docker/jupyter-0.0
+    network_mode: host
+    ports: 
+      - 3398:3389
+      - 80:80
+    volumes:
+      - ${HOME}:/home/jovyan/work
+    command: bash 
 

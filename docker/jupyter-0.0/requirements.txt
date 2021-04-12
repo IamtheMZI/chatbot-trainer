@@ -1,2 +1,4 @@
 gensim
 python-Levenshtein
+nltk
+spacy
